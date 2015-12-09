@@ -42,13 +42,12 @@ class Game
     col = gets.chomp
     row = row.to_i - 1
     col = col.to_i - 1
-    unless self.board.index_on_board?(row) && self.board.index_on_board?(col)
+    if !self.board.index_on_board?(row) || !self.board.index_on_board?(col)
       puts ""
       puts "The row or col you have selected is off the board!"
       puts "Please try again, and select only a number 1-3."
       self.play
-    end
-    if board.values[row][col] == "_"
+    elsif board.values[row][col] == "_"
       board.values[row][col] = current_player.mark
       Player.switch_turn(@player1, @player2)
       if self.board.win?
