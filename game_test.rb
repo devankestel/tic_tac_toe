@@ -79,6 +79,12 @@ class TicTacToeTest < MiniTest::Test
     modified_board.modify(1, 1, "X")
     assert_equal false, modified_board.empty?
   end
+  def test_rejects_out_of_bound_indices
+    assert_equal false, @new_board.index_on_board?(4)
+  end
+  def test_accepts_in_bound_indices
+    assert_equal true, @new_board.index_on_board?(1)
+  end
 
 
   #test wins
@@ -208,8 +214,8 @@ class TicTacToeTest < MiniTest::Test
     assert @new_game.board.is_a?(Board)
   end
   def test_initialize_gives_players_marks
-    assert_equal "X" || "O", @new_game.player1.mark
-    assert_equal "X" || "O", @new_game.player1.mark
+    assert "X" == @new_game.player1.mark || "O" == @new_game.player1.mark
+    assert "X" == @new_game.player2.mark || "O" == @new_game.player2.mark
   end
   
 end

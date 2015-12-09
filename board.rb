@@ -70,4 +70,12 @@ class Board
      self.row_win? || self.col_win? || self.diag_win?   
   end
 
+  def index_on_board?(index)
+    if index >= 0 && index <= 2
+      true
+    else
+      false
+    end
+  end
+
 end
