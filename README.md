@@ -6,4 +6,4 @@ Classic Tic Tac Toe, written in Ruby and playable via the CLI. Written for two h
 
 ## Setup
 
-Clone the repo and 'ruby run.rb'. Columns and rows for squares index starting from 1.
+Clone the repo and `ruby run.rb`. Columns and rows for squares index starting from 1.
